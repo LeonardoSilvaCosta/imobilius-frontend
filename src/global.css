@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --light: #fff;
+  --light-plus: #EDEBE8;
+  --light-minus: #F8FAFF;
+
+  --success: #61E16E;
+  --danger: #FF8989;
+
+  --primary: #EA5122;
+  --primary-plus: #C43D14;
+  --primary-minus: #FF764D;
+
+  --secondary: #191414;
+  --secondary-plus: #0F0E0E;
+  --seconday-minus: #242424;
+}
+
+:focus {
+  outline: transparent;
+  box-shadow: 0 0 0 2px var(--secondary-minus)
+}
+
+
+body {
+  background: var(--light-minus);
+  color: var(--secondary);
+  -webkit-font-smoothing: antialiased;
+}
+
+body, input, textarea, button {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+}
