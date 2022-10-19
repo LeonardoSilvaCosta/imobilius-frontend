@@ -2,7 +2,7 @@
 <p align="center">Projeto desenvolvido com React.js para um cliente utilizando como base web design feito por mim no Figma.</p>
 <img src="https://img.shields.io/badge/REACTJS-WORK-blue">
 
-Table of contents
+Lista de conteúdos
 =================
 <!--ts-->
    * [Sobre](#Sobre)
@@ -13,7 +13,7 @@ Table of contents
 
 ---
 
-### 💻 About
+### 💻 Sobre
 
 Projeto acadêmico desenvolvido para cliente com React.js. Continua...
 
@@ -22,7 +22,7 @@ Projeto acadêmico desenvolvido para cliente com React.js. Continua...
 
 Descrição em breve...
 
-### 🛠 Technologies
+### 🛠 Tecnologias
 
 - [ReactJS](https://pt-br.reactjs.org/)
 - [Vite](https://vitejs.dev/)
@@ -30,7 +30,7 @@ Descrição em breve...
 
 ---
 
-### Author
+### Autor
 [Leonardo da Silva Costa](https://www.linkedin.com/in/leonardo-da-silva-costa/)
 
 Em busca do próximo nível 🚀 - Never stop learning. 🧑‍🎓
