@@ -1,11 +1,11 @@
-import { LoginPage } from "./components/LoginPage";
+import { Sidebar } from "./components/Sidebar";
 
 import './global.css';
 
 export function App() {
   return (
     <>
-      <LoginPage />
+      <Sidebar />
     </>
   );
 }
