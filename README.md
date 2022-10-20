@@ -23,17 +23,17 @@ Projeto acadêmico de gestão de imóveis para empresa fictícia do referido ram
 <h5>Páginas</h5>
 
 - [x] Página de Login
-- [] Dashboard
-- [] Cadastro e gestão de dados dos usuários
-- [] Cadastro e gestão dos dados dos imóveis
+- [ ] Dashboard
+- [ ] Cadastro e gestão de dados dos usuários
+- [ ] Cadastro e gestão dos dados dos imóveis
 
 <h5>Componentes</h5>
 
 - [x] Header
 - [x] Sidebar
-- [] Recomendações
-- [] Gráfico de barras
-- [] Gráfico de pizza
+- [ ] Recomendações
+- [ ] Gráfico de barras
+- [ ] Gráfico de pizza
 
 ### 🛠 Tecnologias
 
