@@ -1,9 +1,9 @@
-.wrapper {
+.login-wrapper {
   max-width: 100%;
   display: flex;
 }
 
-.container {
+.login-container {
   max-width: 1140px;
   width: 100%;
   margin: 0 auto;
@@ -13,7 +13,7 @@
   align-items: center;
 }
 
-.loginHeader {
+.login-header {
   display: flex;
   flex-direction: column;
 
@@ -29,7 +29,8 @@ h5 {
   font-size: 1rem;
 }
 
-.loginForm {
+.login-form {
+  margin-top: 2.625rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -48,7 +49,7 @@ input[type='email'] {
   margin-bottom: 1.25rem;
 }
 
-.checkboxContainer {
+.checkbox-container {
   margin: 1.25rem 0;
   align-self: flex-start;
   display: flex;
@@ -63,10 +64,18 @@ button {
   border: none;
   background: var(--primary);
   color: var(--light);
-  font-weight: bold;
+  font-weight: bold !important;
+  font-size: 1.2rem !important;
 }
 
 a {
   margin: 0.9375rem 0 4.1875rem 0;
-  /* text-decoration */
+  text-decoration: none;
+  color: var(--primary);
+
+  transition: color 0.1s;
+}
+
+a:hover {
+  color: var(--primary-plus);
 }
