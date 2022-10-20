@@ -15,12 +15,23 @@ Lista de conteúdos
 
 ### 💻 Sobre
 
-Projeto acadêmico desenvolvido para cliente com React.js. Continua...
+Projeto acadêmico de gestão de imóveis para empresa fictícia do referido ramo que atuante na cidade do Rio de Janeiro.
 
 ---
 ### Features
 
-Descrição em breve...
+<h5>Páginas</h5>
+[x] Página de Login
+[] Dashboard
+[] Cadastro e gestão de dados dos usuários
+[] Cadastro e gestão dos dados dos imóveis
+
+<h5>Componentes</h5>
+[x] Header
+[x] Sidebar
+[] Recomendações
+[] Gráfico de barras
+[] Gráfico de pizza
 
 ### 🛠 Tecnologias
 
