@@ -24,9 +24,10 @@ Descrição em breve...
 
 ### 🛠 Tecnologias
 
-- [ReactJS](https://pt-br.reactjs.org/)
+- [React.js](https://pt-br.reactjs.org/)
+- [React-Icons](https://react-icons.github.io/react-icons)
 - [Vite](https://vitejs.dev/)
-- [vsCode](https://code.visualstudio.com/)
+- [VSCode](https://code.visualstudio.com/)
 
 ---
 
