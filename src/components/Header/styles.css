@@ -1,0 +1,15 @@
+.header-container {
+  max-width: 1140px;
+  width: 100%;
+  margin: 0 auto;
+  
+  height: 7.25rem;
+
+  display: flex;
+  align-items: center;
+}
+
+.header-brand {
+  display: flex;
+  align-items: center;
+}
