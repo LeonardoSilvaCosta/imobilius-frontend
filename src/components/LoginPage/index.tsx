@@ -1,4 +1,4 @@
-import LockerImg from "../assets/images/locker.svg";
+import LockerImg from "../../assets/images/locker.svg";
 
 import "./styles.css";
 

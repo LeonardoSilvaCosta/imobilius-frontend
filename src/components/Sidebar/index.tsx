@@ -12,20 +12,26 @@ export function Sidebar() {
           <li>
             <ul>
               <a href="#">
+                <div className="menu-line">
                 <MdOutlineDashboard className="icon" />
                 Dashboard
+                </div>
               </a>
             </ul>
             <ul>
               <a href="#">
+                <div className="menu-line">
                 <FiUser className="icon" />
                 Usuários
+                </div>
               </a>
             </ul>
             <ul>
               <a href="#">
+                <div className="menu-line">
                 <FiHome className="icon" />
                 Imóveis
+                </div>
               </a>
             </ul>
           </li>
@@ -35,8 +41,10 @@ export function Sidebar() {
           <li>
             <ul>
               <a href="#">
+                <div className="menu-line">
                 <IoMdExit className="icon" />
                 Sair
+                </div>
               </a>
             </ul>
           </li>
