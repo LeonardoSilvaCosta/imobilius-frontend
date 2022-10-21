@@ -1,0 +1,88 @@
+.management-table-container {
+  width: 1054px;
+
+  border: 1px solid var(--primary);
+  background: transparent;
+
+
+  padding: 2.5rem 1.625rem 1.5625rem 4.1875rem;
+  border-radius: 1.25rem;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+}
+
+h2 {
+  font-weight: normal;
+}
+
+button {
+  width: 83px;
+  height: 34px;
+  background: var(--primary);
+  color: var(--light);
+  border: none;
+
+  font-size: 0.85rem;
+  font-weight: bold;
+
+  border-radius: 7px;
+}
+
+header button {
+  width: 106px;
+  height: 40px;
+}
+
+.pagination-container button {
+  width: 30px;
+  height: 30px;
+}
+
+.table-container {
+  height: 365px;
+  margin-top: 1.8125rem;
+  /* border: 1px solid red; */
+}
+
+table {
+  border-collapse: collapse;
+  text-align: left;
+}
+
+tr {
+  border-bottom: 1px solid var(--primary);
+}
+
+th {
+  width: 200px;
+  font-weight: normal;
+}
+
+.edit {
+  width: 100px;
+}
+
+.delete {
+  width: 30px;
+}
+
+td {
+  width: 200px;
+  font-weight: bold;
+}
+
+th, td {
+  padding: 0.875rem 0;
+}
+
+.pagination-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.pagination-button-group {
+  width: 17%;
+}
