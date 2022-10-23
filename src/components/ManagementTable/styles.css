@@ -13,7 +13,7 @@ h2 {
   font-weight: normal;
 }
 
-button {
+.management-table-container button {
   width: 83px;
   height: 34px;
   background: var(--primary);

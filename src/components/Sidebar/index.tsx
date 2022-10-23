@@ -1,38 +1,54 @@
+import { useState } from "react";
 import { FiUser, FiHome } from "react-icons/fi";
 import { IoMdExit } from "react-icons/io";
 import { MdOutlineDashboard } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 import "./styles.css";
 
 export function Sidebar() {
+  const [activeLink, setActiveLink] = useState("dashboard");
+
   return (
     <div className="sidebar-container">
       <div className="menu">
         <div className="first-menu-list">
           <li>
             <ul>
-              <a href="#">
+              <Link
+                className={activeLink === "dashboard" ? "activeLink" : ""}
+                to="/dashboard"
+                onClick={() => setActiveLink("dashboard")}
+              >
                 <div className="menu-line">
-                <MdOutlineDashboard className="icon" />
-                Dashboard
+                  <MdOutlineDashboard className="icon" />
+                  Dashboard
                 </div>
-              </a>
+              </Link>
             </ul>
             <ul>
-              <a href="#">
+              <Link
+                className={activeLink === "Usuários" ? "activeLink" : ""}
+                to="/users"
+                onClick={() => setActiveLink("Usuários")}
+              >
                 <div className="menu-line">
-                <FiUser className="icon" />
-                Usuários
+                  <FiUser className="icon" />
+                  Usuários
                 </div>
-              </a>
+              </Link>
             </ul>
             <ul>
-              <a href="#">
+              <Link
+                className={activeLink === "Imóveis" ? "activeLink" : ""}
+                to="/real-state"
+                onClick={() => setActiveLink("Imóveis")}
+              >
                 <div className="menu-line">
-                <FiHome className="icon" />
-                Imóveis
+                  <FiHome className="icon" />
+                  Imóveis
                 </div>
-              </a>
+              </Link>
             </ul>
           </li>
         </div>
@@ -40,12 +56,16 @@ export function Sidebar() {
         <div className="second-menu-list">
           <li>
             <ul>
-              <a href="#">
+              <Link
+                className={activeLink === "Sair" ? "activeLink" : ""}
+                to="/"
+                onClick={() => setActiveLink("Sair")}
+              >
                 <div className="menu-line">
-                <IoMdExit className="icon" />
-                Sair
+                  <IoMdExit className="icon" />
+                  Sair
                 </div>
-              </a>
+              </Link>
             </ul>
           </li>
         </div>

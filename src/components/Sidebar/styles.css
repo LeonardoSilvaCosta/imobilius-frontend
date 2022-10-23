@@ -50,3 +50,7 @@ ul:nth-child(2) {
 a:hover {
   color: var(--light-plus)
 }
+
+.activeLink {
+  color: var(--secondary);
+}
