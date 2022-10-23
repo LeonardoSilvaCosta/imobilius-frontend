@@ -4,17 +4,12 @@
   border: 1px solid var(--primary);
   background: transparent;
 
-
   padding: 2.5rem 1.625rem 1.5625rem 4.1875rem;
   border-radius: 1.25rem;
 }
 
-header {
-  display: flex;
-  justify-content: space-between;
-}
-
 h2 {
+  font-size: 2rem;
   font-weight: normal;
 }
 
@@ -31,9 +26,23 @@ button {
   border-radius: 7px;
 }
 
+header {
+  display: flex;
+  justify-content: space-between;
+}
+
 header button {
   width: 106px;
   height: 40px;
+
+  padding: 0.2rem;
+
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.pagination-container {
+  font-weight: bold;
 }
 
 .pagination-container button {
@@ -42,9 +51,8 @@ header button {
 }
 
 .table-container {
-  height: 365px;
+  height: 350px;
   margin-top: 1.8125rem;
-  /* border: 1px solid red; */
 }
 
 table {
@@ -61,14 +69,6 @@ th {
   font-weight: normal;
 }
 
-.edit {
-  width: 100px;
-}
-
-.delete {
-  width: 30px;
-}
-
 td {
   width: 200px;
   font-weight: bold;
@@ -78,9 +78,33 @@ th, td {
   padding: 0.875rem 0;
 }
 
+.edit {
+  width: 100px;
+}
+
+.edit button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.delete {
+  width: 30px;
+}
+
+.trash-icon {
+  width: 24px;
+  height: 24px;
+
+  color: var(--primary);
+}
+
 .pagination-container {
+  height: 10%;
   display: flex;
   justify-content: space-between;
+  align-items: flex-end;
 }
 
 .pagination-button-group {

@@ -1,3 +1,6 @@
+import { BiTrash } from "react-icons/bi";
+import { FiEdit2 } from "react-icons/fi";
+
 import "./styles.css";
 
 export function ManagementTable() {
@@ -27,9 +30,9 @@ export function ManagementTable() {
             <td>leonardocostapsi@gmail.com</td>
             <td>(91) 98816-5507</td>
             <td className="edit">
-              <button>Editar</button>
+              <button><FiEdit2 />Editar</button>
             </td>
-            <td className="delete">Trash</td>
+            <td className="delete"><BiTrash className="trash-icon" /></td>
           </tr>
         </table>
       </div>
