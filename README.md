@@ -24,7 +24,7 @@ Projeto acadêmico de gestão de imóveis para empresa fictícia do referido ram
 
 - [x] Página de Login
 - [ ] Dashboard
-- [ ] Cadastro e gestão de dados dos usuários
+- [x] Cadastro e gestão de dados dos usuários
 - [ ] Cadastro e gestão dos dados dos imóveis
 
 <h5>Componentes</h5>

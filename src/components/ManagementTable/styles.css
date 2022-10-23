@@ -56,6 +56,7 @@ header button {
 }
 
 table {
+  width: 100%;
   border-collapse: collapse;
   text-align: left;
 }
@@ -65,12 +66,18 @@ tr {
 }
 
 th {
-  width: 200px;
   font-weight: normal;
 }
 
+th:first-child, td:first-child {
+  width: 5%;
+}
+
+th:nth-child, td:nth-child(3) {
+  width: 35%;
+}
+
 td {
-  width: 200px;
   font-weight: bold;
 }
 
@@ -78,19 +85,11 @@ th, td {
   padding: 0.875rem 0;
 }
 
-.edit {
-  width: 100px;
-}
-
 .edit button {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 0.2rem;
-}
-
-.delete {
-  width: 30px;
 }
 
 .trash-icon {
