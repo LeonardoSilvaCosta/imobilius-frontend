@@ -25,7 +25,7 @@ Projeto acadêmico de gestão de imóveis para empresa fictícia do referido ram
 - [x] Página de Login
 - [ ] Dashboard
 - [x] Cadastro e gestão de dados dos usuários
-- [ ] Cadastro e gestão dos dados dos imóveis
+- [x] Cadastro e gestão dos dados dos imóveis
 
 <h5>Componentes</h5>
 
@@ -37,8 +37,11 @@ Projeto acadêmico de gestão de imóveis para empresa fictícia do referido ram
 
 ### 🛠 Tecnologias
 
-- [React.js](https://pt-br.reactjs.org/)
+- [Mirage.js](https://miragejs.com/)
 - [React-Icons](https://react-icons.github.io/react-icons)
+- [React.js](https://pt-br.reactjs.org/)
+- [react-router-dom](https://www.npmjs.com/package/react-router-dom)
+- [typescript](https://www.typescriptlang.org/)
 - [Vite](https://vitejs.dev/)
 - [VSCode](https://code.visualstudio.com/)
 

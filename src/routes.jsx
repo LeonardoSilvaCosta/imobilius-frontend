@@ -31,7 +31,10 @@ const MyRoutes = () => {
               <Header />
               <div className="main-container">
                 <Sidebar />
-                <ManagementTable />
+                <ManagementTable 
+                  title="Usuários"
+                  entityType="user"
+                />
               </div>
             </>
           }
@@ -43,7 +46,10 @@ const MyRoutes = () => {
               <Header />
               <div className="main-container">
                 <Sidebar />
-                <ManagementTable />
+                <ManagementTable 
+                  title="Imóveis"
+                  entityType="real state" 
+                />
               </div>
             </>
           }
