@@ -25,6 +25,8 @@ export function LoginPage() {
     .then(data => {
       if(data.status === 200) {
         navigate("/dashboard");
+      } else {
+        console.log(` ${data.status}: ${data.message} `)
       }
     })
   }
