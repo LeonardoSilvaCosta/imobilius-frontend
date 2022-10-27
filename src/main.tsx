@@ -3,6 +3,8 @@ import ReactDOM from "react-dom/client";
 import { App } from "./App";
 import { createServer } from "miragejs";
 
+import { recommendationsDataTest } from './globalData';
+
 createServer({
   routes() {
     this.namespace = "api";
@@ -25,6 +27,11 @@ createServer({
         };
       }
     });
+
+    this.get("/recommendations", (schema, request) => {
+      console.log(recommendationsDataTest)
+      return recommendationsDataTest;
+    })
   },
 });
 
