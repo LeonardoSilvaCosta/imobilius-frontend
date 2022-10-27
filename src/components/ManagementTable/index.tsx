@@ -97,7 +97,7 @@ export function ManagementTable({ title, entityType }: ManagementTableProps) {
         )}
       </div>
       <div className="pagination-container">
-        <span>0 - 2 de 2</span>
+        <span>0 - 1 de 1</span>
         <div className="pagination-button-group">
           <button>1</button>
         </div>

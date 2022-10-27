@@ -26,12 +26,12 @@ h2 {
   border-radius: 7px;
 }
 
-header {
+.management-table-container header {
   display: flex;
   justify-content: space-between;
 }
 
-header button {
+.management-table-container header button {
   width: 106px;
   height: 40px;
 
