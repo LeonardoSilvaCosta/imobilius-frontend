@@ -29,16 +29,22 @@ export function ManagementTable({ title, entityType }: ManagementTableProps) {
         <h2>{title}</h2>
         <button>+ Criar novo</button>
       </header>
-      <div className="table-container">
+      <div
+        className={
+          entityType === "user"
+            ? "table-container-user"
+            : "table-container-real-state"
+        }
+      >
         {entityType === "user" ? (
           <table>
             <tr>
               <th>
                 <input type="checkbox" />
               </th>
-              <th>Nome</th>
-              <th>E-mail</th>
-              <th>Telefone</th>
+              <th className="user-name">Nome</th>
+              <th className="user-email">E-mail</th>
+              <th className="user-phone">Telefone</th>
               <th className="edit"></th>
               <th className="delete"></th>
             </tr>
@@ -46,14 +52,16 @@ export function ManagementTable({ title, entityType }: ManagementTableProps) {
               <td>
                 <input type="checkbox" />
               </td>
-              <td>Leonardo Costa</td>
-              <td>leonardocostapsi@gmail.com</td>
-              <td>(91) 98816-5507</td>
+              <td className="user-name">Leonardo Costa</td>
+              <td className="user-email">leonardocostapsi@gmail.com</td>
+              <td className="user-phone">(91) 98816-5507</td>
               <td className="edit">
-                <button>
-                  <FiEdit2 />
-                  Editar
-                </button>
+                <span>
+                  <button>
+                    <FiEdit2 />
+                    Editar
+                  </button>
+                </span>
               </td>
               <td className="delete">
                 <BiTrash className="trash-icon" />
@@ -66,11 +74,11 @@ export function ManagementTable({ title, entityType }: ManagementTableProps) {
               <th>
                 <input type="checkbox" />
               </th>
-              <th>id</th>
-              <th>Categoria</th>
-              <th>Descrição</th>
-              <th>Endereço</th>
-              <th>Valor</th>
+              <th className="real-state-id">id</th>
+              <th className="real-state-category">Categoria</th>
+              <th className="real-state-real-state-description">Descrição</th>
+              <th className="real-state-address">Endereço</th>
+              <th className="real-state-value">Valor</th>
               <th className="edit"></th>
               <th className="delete"></th>
             </tr>
@@ -78,11 +86,11 @@ export function ManagementTable({ title, entityType }: ManagementTableProps) {
               <td>
                 <input type="checkbox" />
               </td>
-              <td>001</td>
-              <td>Casa</td>
-              <td>1 sala, 2/4, 1 banheiro, sem garagem, 122m2</td>
-              <td>Rua esperança, satélite, 535, Belém-PA, 66458/758</td>
-              <td>R$ 100,00</td>
+              <td className="real-state-id">001</td>
+              <td className="real-state-category">Casa</td>
+              <td className="real-state-real-state-description">1 sala, 2/4, 1 banheiro, sem garagem, 122m2</td>
+              <td className="real-state-address">Rua esperança, satélite, 535, Belém-PA, 66458/758</td>
+              <td className="real-state-value">R$ 100,00</td>
               <td className="edit">
                 <button>
                   <FiEdit2 />
