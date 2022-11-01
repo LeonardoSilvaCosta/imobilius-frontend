@@ -1,5 +1,6 @@
 .bar-chart-container {
-  height: 55%;
+  max-height: 50%;
+  height: 100%;
   padding: 1rem;
   margin: 0 1rem;
   border-radius: 20px;
@@ -7,7 +8,12 @@
 }
 
 .bar-chart-container header {
-  height: 20%;
+  height: 15%;
+}
+
+.bar-chart-header {
+  display: flex;
+  gap: 2rem;
 }
 
 .bar-chart-header select {
@@ -17,7 +23,6 @@
 
 .bar-chart-radio-group {
   display: flex;
-  justify-content: flex-end;
 
   gap: 0.8rem;
 }

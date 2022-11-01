@@ -9,3 +9,9 @@
   
   margin: 0 auto;
 }
+
+.charts-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5%;
+}
