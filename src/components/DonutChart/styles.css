@@ -1,7 +1,7 @@
 .donut-chart-container {
   max-height: 48.5%;
   height: 100%;
-  padding: 1rem;
+  padding: 0.5rem;
   margin: 0 1rem;
   border-radius: 20px;
   border: 1px solid var(--primary);
@@ -13,7 +13,7 @@
 }
 
 .donut-chart-header select {
-  margin-top: 0.7rem;
+  margin-top: 0.8rem;
   background: transparent;
   border: none;
 }
@@ -23,18 +23,8 @@
   justify-content: space-around;
 }
 
-.donut-chart-group {
-  width: 40%;
-  display: flex;
-  flex-direction: column;
-}
-
-.donut-chart-group label {
-  text-align: center;
-}
-
 .donut-chart {
   margin-top: 1rem;
-  width: 130px !important;
-  height: 130px !important;
+  width: 140px !important;
+  height: 140px !important;
 }
