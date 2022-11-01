@@ -12,6 +12,7 @@ import { Bar } from "react-chartjs-2";
 import { faker } from "@faker-js/faker";
 
 import "./styles.css";
+import { City } from "../../types/types";
 
 Chart.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
@@ -23,7 +24,11 @@ export const options = {
   },
 };
 
-export function BarChart() {
+interface BarChartProps {
+  cities: City[];
+}
+
+export function BarChart({ cities }: BarChartProps) {
   const labels = ["Casa", "Apto.", "Residencial"];
   const data = {
     labels,
@@ -50,8 +55,9 @@ export function BarChart() {
         <div className="bar-chart-header">
           <select>
             <option>selecione...</option>
-            <option>Ipê</option>
-            <option>Ipiranga</option>
+            {cities.map((e: City) => (
+              <option>{e.name}</option>
+            ))}
           </select>
         </div>
         <div className="bar-chart">

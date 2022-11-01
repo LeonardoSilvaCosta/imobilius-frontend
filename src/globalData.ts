@@ -32,3 +32,26 @@ export const recommendationsDataTest = [
     address: "Rua das orquídeas, 88, Nova Ipiranga, RJ",
   },
 ];
+
+export const citiesDataTest = [
+  {
+    id: 1234,
+    name: "Rio de Janeiro",
+  },
+  {
+    id: 2345,
+    name: "Belford Roxo"
+  },
+  {
+    id: 3456,
+    name: "Duque de Caxias"
+  },
+  {
+    id: 4567,
+    name: "Guapimirim"
+  },
+  {
+    id: 5678,
+    name: "Itaboraí"
+  },
+];

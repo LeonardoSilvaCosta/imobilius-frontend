@@ -1,5 +1,6 @@
 import { Chart, ArcElement, Tooltip, Legend } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
+import { City } from "../../types/types";
 
 import "./styles.css";
 
@@ -43,7 +44,11 @@ export const rentData = {
   ],
 };
 
-export function DonutChart() {
+interface DonutChartProps {
+  cities: City[];
+}
+
+export function DonutChart({ cities }: DonutChartProps ) {
   return (
     <section className="donut-chart-container">
       <header>
@@ -53,8 +58,9 @@ export function DonutChart() {
         <div className="donut-chart-header">
           <select>
             <option>selecione...</option>
-            <option>Ipê</option>
-            <option>Ipiranga</option>
+            {cities.map((e) => (
+              <option>{e.name}</option>
+            ))}
           </select>
         </div>
         <div className="donut-chart-main">
