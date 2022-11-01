@@ -6,14 +6,14 @@ import "./styles.css";
 Chart.register(ArcElement, Tooltip, Legend);
 
 export const salesData = {
-  labels: ["vendidos", "à venda"],
+  labels: ["vendidos", "  à venda"],
   datasets: [
     {
       label: "# of real state",
       data: [0.69 * 100, 0.41 * 100],
       backgroundColor: [
-        "rgba(255, 99, 132, 0.2)",
-        "rgba(255, 206, 86, 0.2)",
+        "rgba(255, 99, 132, 1)",
+        "rgba(255, 206, 86, 1)",
       ],
       borderColor: [
         "rgba(255, 99, 132, 1)",
@@ -25,14 +25,14 @@ export const salesData = {
 };
 
 export const rentData = {
-  labels: ["alugados", "para alugar"],
+  labels: ["alugados", " à alugar"],
   datasets: [
     {
       label: "# of real state",
       data: [0.75 * 100, 0.25 * 100],
       backgroundColor: [
-        "rgba(75, 192, 192, 0.2)",
-        "rgba(255, 159, 64, 0.2)",
+        "rgba(75, 192, 192, 1)",
+        "rgba(255, 159, 64, 1)",
       ],
       borderColor: [
         "rgba(75, 192, 192, 1)",

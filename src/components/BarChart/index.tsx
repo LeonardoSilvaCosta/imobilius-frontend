@@ -18,7 +18,7 @@ Chart.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 export const options = {
   responsive: true,
   plugins: {
-    legend: false,
+    legend: true,
     title: false,
   },
 };
@@ -29,12 +29,14 @@ export function BarChart() {
     labels,
     datasets: [
       {
+        label: "Venda",
         data: labels.map(() => faker.datatype.number({ min: 0, max: 5000 })),
-        backgroundColor: "rgba(255, 99, 132, 0.5)",
+        backgroundColor: "rgba(255, 99, 132, 1)",
       },
       {
+        label: "Aluguel",
         data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
-        backgroundColor: "rgba(53, 162, 235, 0.5)",
+        backgroundColor: "rgba(53, 162, 235, 1)",
       },
     ],
   };
@@ -51,16 +53,6 @@ export function BarChart() {
             <option>Ipê</option>
             <option>Ipiranga</option>
           </select>
-          <div className="bar-chart-radio-group">
-            <div>
-              <input type="radio" name="category" checked value="Venda" />
-              <label>Venda</label>
-            </div>
-            <div>
-              <input type="radio" name="category" value="Aluguel" />
-              <label>Aluguel</label>
-            </div>
-          </div>
         </div>
         <div className="bar-chart">
           <Bar options={options} data={data} />
