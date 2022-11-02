@@ -1,4 +1,4 @@
-import MyRoutes from "./routes";
+import MyRoutes from "./routes.jsx";
 
 import "./global.css";
 

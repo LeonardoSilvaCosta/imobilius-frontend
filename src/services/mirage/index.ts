@@ -1,43 +1,7 @@
-import { createServer, Model } from "miragejs";
+import { createServer, Factory, Model } from "miragejs";
+import { faker } from '@faker-js/faker';
 import { citiesDataTest, recommendationsDataTest } from "../../globalData";
-
-type User = {
-  id: number;
-  name: string;
-  lastname: string;
-  username: string;
-  email: string;
-  phone1: string;
-  phone2: string;
-  created_at: string;
-};
-
-type RealState = {
-  id: number;
-  category: Category;
-  address: Address;
-  bedrooms: number;
-  bathrooms: number;
-  garage: number;
-  totalArea: string;
-  aquisitionType: string;
-  status: string;
-  value: number;
-  created_at: string;
-};
-
-type Category = {
-  id: number;
-  title: string;
-  description: string;
-};
-
-type Address = {
-  street: string;
-  number: number;
-  neighborhood: string;
-  zone: string;
-};
+import { City, RealState, User } from "../../types/types";
 
 export function makeServer() {
   const server = createServer({
@@ -46,9 +10,53 @@ export function makeServer() {
       realState: Model.extend<Partial<RealState>>({}),
       city: Model.extend<Partial<City>>({}),
     },
+
+    factories: {
+      user: Factory.extend({
+        id(i: number) {
+          return i + 1;
+        },
+        name(i: number) {
+          return `User ${i + 1}`;
+        },
+        email() {
+          return faker.internet.email().toLowerCase();
+        },
+        phone() {
+          return (`(91)${Math.pow(9, 8)}`);
+        },
+      }),
+
+      realState: Factory.extend({
+        id(i: number) {
+          return i + 1;
+        },
+        category(i: number) {
+          const categoryList = ["casa", "apto.", "residencial", "casa", "apto."];
+          return categoryList[i];
+        },
+        description() {
+          const description = ["1 sala, 3/4, 1 banheiro, sem garagem"]
+          return description[0];
+        },
+        address() {
+          const address = ["Rua das orquídeas, n° 53, Parque Verde, Nova Marabá"]
+          return address[0];
+        },
+        value(i: number) {
+          const values = [2000, 5000, 100.000, 200.000, 500.000]
+          return values[i];
+        }
+      })
+    },
+
+    seeds(server) {
+      server.createList('user', 5);
+      server.createList('realState', 4)
+    },
+
     routes() {
       this.namespace = "api";
-      // this.timing = 750;
       this.post("/login", (schema, request) => {
         const credentials = JSON.parse(request.requestBody);
 
@@ -69,6 +77,7 @@ export function makeServer() {
       });
 
       this.get('/users');
+      this.get('/real-states');
 
       this.get('/cities', (schema, request) => {
         return citiesDataTest;

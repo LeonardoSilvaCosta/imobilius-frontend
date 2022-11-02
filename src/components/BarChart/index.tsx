@@ -54,7 +54,6 @@ export function BarChart({ cities }: BarChartProps) {
       <main>
         <div className="bar-chart-header">
           <select>
-            <option>selecione...</option>
             {cities.map((e: City) => (
               <option>{e.name}</option>
             ))}

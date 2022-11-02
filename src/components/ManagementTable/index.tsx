@@ -6,9 +6,12 @@ import "./styles.css";
 interface ManagementTableProps {
   title: string;
   entityType: "user" | "real state";
+  users?: User[];
+  realStates?: RealState[];
 }
 
 type User = {
+  id: number;
   name: string;
   email: string;
   phone: string;
@@ -22,7 +25,12 @@ type RealState = {
   value: number;
 };
 
-export function ManagementTable({ title, entityType }: ManagementTableProps) {
+export function ManagementTable({
+  title,
+  entityType,
+  users,
+  realStates,
+}: ManagementTableProps) {
   return (
     <div className="management-table-container">
       <header>
@@ -48,25 +56,29 @@ export function ManagementTable({ title, entityType }: ManagementTableProps) {
               <th className="edit"></th>
               <th className="delete"></th>
             </tr>
-            <tr>
-              <td>
-                <input type="checkbox" />
-              </td>
-              <td className="user-name">Leonardo Costa</td>
-              <td className="user-email">leonardocostapsi@gmail.com</td>
-              <td className="user-phone">(91) 98816-5507</td>
-              <td className="edit">
-                <span>
-                  <button>
-                    <FiEdit2 />
-                    Editar
-                  </button>
-                </span>
-              </td>
-              <td className="delete">
-                <BiTrash className="trash-icon" />
-              </td>
-            </tr>
+            {users?.map((user: User) => (
+              <tr key={user.id}>
+                <>
+                  <td>
+                    <input type="checkbox" />
+                  </td>
+                  <td className="user-name">{user.name}</td>
+                  <td className="user-email">{user.email}</td>
+                  <td className="user-phone">{user.phone}</td>
+                  <td className="edit">
+                    <span>
+                      <button>
+                        <FiEdit2 />
+                        Editar
+                      </button>
+                    </span>
+                  </td>
+                  <td className="delete">
+                    <BiTrash className="trash-icon" />
+                  </td>
+                </>
+              </tr>
+            ))}
           </table>
         ) : (
           <table>
@@ -82,25 +94,31 @@ export function ManagementTable({ title, entityType }: ManagementTableProps) {
               <th className="edit"></th>
               <th className="delete"></th>
             </tr>
-            <tr>
-              <td>
-                <input type="checkbox" />
-              </td>
-              <td className="real-state-id">001</td>
-              <td className="real-state-category">Casa</td>
-              <td className="real-state-real-state-description">1 sala, 2/4, 1 banheiro, sem garagem, 122m2</td>
-              <td className="real-state-address">Rua esperança, satélite, 535, Belém-PA, 66458/758</td>
-              <td className="real-state-value">R$ 100,00</td>
-              <td className="edit">
-                <button>
-                  <FiEdit2 />
-                  Editar
-                </button>
-              </td>
-              <td className="delete">
-                <BiTrash className="trash-icon" />
-              </td>
-            </tr>
+            {realStates?.map((realState: RealState) => (
+              <tr key={realState.id}>
+                <>
+                  <td>
+                    <input type="checkbox" />
+                  </td>
+                  <td className="real-state-id">{realState.id}</td>
+                  <td className="real-state-category">{realState.category}</td>
+                  <td className="real-state-real-state-description">
+                    {realState.description}
+                  </td>
+                  <td className="real-state-address">{realState.address}</td>
+                  <td className="real-state-value">{realState.value}</td>
+                  <td className="edit">
+                    <button>
+                      <FiEdit2 />
+                      Editar
+                    </button>
+                  </td>
+                  <td className="delete">
+                    <BiTrash className="trash-icon" />
+                  </td>
+                </>
+              </tr>
+            ))}
           </table>
         )}
       </div>

@@ -57,7 +57,6 @@ export function DonutChart({ cities }: DonutChartProps ) {
       <main>
         <div className="donut-chart-header">
           <select>
-            <option>selecione...</option>
             {cities.map((e) => (
               <option>{e.name}</option>
             ))}

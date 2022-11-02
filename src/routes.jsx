@@ -6,8 +6,23 @@ import { Header } from "./components/Header";
 import { Sidebar } from "./components/Sidebar";
 
 import "./styles.css";
+import { useEffect, useState } from "react";
+
 
 const MyRoutes = () => {
+  const [userFactory, setUserFactory] = useState();
+  const [realStateFactory, setRealStateFactory] = useState();
+
+  useEffect(() => {
+    fetch("http://localhost:5173/api/users")
+    .then(response => response.json())
+    .then(data => setUserFactory(data));
+
+    fetch("http://localhost:5173/api/real-states")
+    .then(response => response.json())
+    .then(data => setRealStateFactory(data)); 
+  }, [])
+  console.log("realState", realStateFactory)
   return (
     <BrowserRouter>
       <Routes>
@@ -34,6 +49,7 @@ const MyRoutes = () => {
                 <ManagementTable 
                   title="Usuários"
                   entityType="user"
+                  users={userFactory?.users}
                 />
               </div>
             </>
@@ -48,7 +64,8 @@ const MyRoutes = () => {
                 <Sidebar />
                 <ManagementTable 
                   title="Imóveis"
-                  entityType="real state" 
+                  entityType="real state"
+                  realStates={realStateFactory?.realStates}
                 />
               </div>
             </>

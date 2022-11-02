@@ -52,7 +52,7 @@
 
 .table-container-user, .table-container-real-state {
   height: 350px;
-  margin-top: 1.8125rem;
+  margin-top: 0.8rem;
 }
 
 .table-container-user table, .table-container-real-state table {
@@ -68,7 +68,7 @@
 
 .table-container-user th, td,
 .table-container-real-state th, td {
-  padding: 0.875rem 0;
+  padding: 0.7rem 0;
 }
 
 .table-container-user th, 
@@ -118,6 +118,9 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  
+  
+  margin-top: 0.5rem;
 }
 
 .pagination-button-group {
