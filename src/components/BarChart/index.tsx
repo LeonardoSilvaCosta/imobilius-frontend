@@ -36,12 +36,12 @@ export function BarChart({ cities }: BarChartProps) {
       {
         label: "Venda",
         data: labels.map(() => faker.datatype.number({ min: 0, max: 5000 })),
-        backgroundColor: "rgba(255, 99, 132, 1)",
+        backgroundColor: "rgba(234, 81, 34, 1)",
       },
       {
         label: "Aluguel",
         data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
-        backgroundColor: "rgba(53, 162, 235, 1)",
+        backgroundColor: "rgba(217, 217, 217, 1)",
       },
     ],
   };

@@ -13,12 +13,12 @@ export const salesData = {
       label: "# of real state",
       data: [0.69 * 100, 0.41 * 100],
       backgroundColor: [
-        "rgba(255, 99, 132, 1)",
-        "rgba(255, 206, 86, 1)",
+        "rgba(234, 81, 34, 1)",
+        "rgba(255, 206, 120, 1)",
       ],
       borderColor: [
-        "rgba(255, 99, 132, 1)",
-        "rgba(255, 206, 86, 1)",
+        "rgba(234, 81, 34, 1)",
+        "rgba(255, 206, 120, 1)",
       ],
       borderWidth: 1,
     },
@@ -32,12 +32,12 @@ export const rentData = {
       label: "# of real state",
       data: [0.75 * 100, 0.25 * 100],
       backgroundColor: [
-        "rgba(75, 192, 192, 1)",
-        "rgba(255, 159, 64, 1)",
+        "rgba(217, 217, 217, 1)",
+        "rgba(255, 99, 132, 1)",
       ],
       borderColor: [
-        "rgba(75, 192, 192, 1)",
-        "rgba(255, 159, 64, 1)",
+        "rgba(217, 217, 217, 1)",
+        "rgba(255, 99, 132, 1)",
       ],
       borderWidth: 1,
     },
