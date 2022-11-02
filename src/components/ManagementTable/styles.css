@@ -94,6 +94,10 @@
   width: 15%;
 }
 
+.table-container-real-state .real-state-value {
+  text-align: center;
+}
+
 .edit span {
   display: flex;
   justify-content: center;

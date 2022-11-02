@@ -45,7 +45,7 @@ export function makeServer() {
         },
         value(i: number) {
           const values = [2000, 5000, 100.000, 200.000, 500.000]
-          return values[i];
+          return `R$ ${values[i]},00`;
         }
       })
     },
