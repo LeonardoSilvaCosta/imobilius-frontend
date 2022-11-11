@@ -86,8 +86,10 @@ export function makeServer() {
       this.get("/recommendations", (schema, request) => {
         return recommendationsDataTest;
       });
+
+      this.namespace = '';
+      this.passthrough('http://localhost:8080/**');
     },
   });
-
   return server;
 }
