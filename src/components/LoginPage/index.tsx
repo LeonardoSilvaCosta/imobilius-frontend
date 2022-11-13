@@ -19,10 +19,10 @@ export function LoginPage() {
       body: JSON.stringify({ email, password })
     }
 
-    fetch('http://localhost:8080/login', requestOptions)
+    fetch('http://localhost:5173/api/login', requestOptions)
     .then(response => response.json())
     .then(data => {
-      if(!!data.email) {
+      if(data.status === 200) {
         navigate("/dashboard");
       } else {
         console.log(` ${data.status}: ${data.message} `)

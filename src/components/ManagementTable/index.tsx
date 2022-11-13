@@ -1,3 +1,4 @@
+import { Dispatch, SetStateAction } from "react";
 import { BiTrash } from "react-icons/bi";
 import { FiEdit2 } from "react-icons/fi";
 
@@ -7,6 +8,7 @@ interface ManagementTableProps {
   title: string;
   entityType: "user" | "real state";
   users?: User[];
+  setUserFactory: Dispatch<SetStateAction<Data>>;
   realStates?: RealState[];
 }
 
@@ -25,12 +27,27 @@ type RealState = {
   value: number;
 };
 
+export type Data = {
+  users: User[] | undefined;
+}
+
 export function ManagementTable({
   title,
   entityType,
   users,
+  setUserFactory,
   realStates,
 }: ManagementTableProps) {
+
+
+  function handleDelete(e: any, user_id: number) {
+    let usersWithoutDeleteElement: User[] | undefined = [];
+    usersWithoutDeleteElement = users?.filter((e: User) => {
+      return e.id !== user_id
+    })
+
+    setUserFactory({ users: usersWithoutDeleteElement });
+  }
   return (
     <div className="management-table-container">
       <header>
@@ -67,14 +84,14 @@ export function ManagementTable({
                   <td className="user-phone">{user.phone}</td>
                   <td className="edit">
                     <span>
-                      <button>
+                      <button type="button">
                         <FiEdit2 />
                         Editar
                       </button>
                     </span>
                   </td>
                   <td className="delete">
-                    <BiTrash className="trash-icon" />
+                    <BiTrash onClick={(e) => handleDelete(e, user.id,)} className="trash-icon" />
                   </td>
                 </>
               </tr>
@@ -108,7 +125,7 @@ export function ManagementTable({
                   <td className="real-state-address">{realState.address}</td>
                   <td className="real-state-value">{realState.value}</td>
                   <td className="edit">
-                    <button>
+                    <button type="button">
                       <FiEdit2 />
                       Editar
                     </button>

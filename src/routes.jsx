@@ -8,10 +8,10 @@ import { Sidebar } from "./components/Sidebar";
 import "./styles.css";
 import { useEffect, useState } from "react";
 
-
 const MyRoutes = () => {
   const [userFactory, setUserFactory] = useState();
   const [realStateFactory, setRealStateFactory] = useState();
+  console.log(userFactory)
 
   useEffect(() => {
     fetch("http://localhost:5173/api/users")
@@ -50,6 +50,7 @@ const MyRoutes = () => {
                   title="Usuários"
                   entityType="user"
                   users={userFactory?.users}
+                  setUserFactory={setUserFactory}
                 />
               </div>
             </>
