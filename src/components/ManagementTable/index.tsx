@@ -1,6 +1,7 @@
 import { Dispatch, SetStateAction } from "react";
 import { BiTrash } from "react-icons/bi";
 import { FiEdit2 } from "react-icons/fi";
+import { MyModal } from "../MyModal";
 
 import "./styles.css";
 
@@ -46,6 +47,10 @@ export function ManagementTable({
   setRealStateFactory
 }: ManagementTableProps) {
 
+  function handleUpdate(e: any, entity_id: number, entityType: String) {
+
+  }
+
 
   function handleDelete(e: any, entity_id: number, entityType: String) {
 
@@ -69,7 +74,7 @@ export function ManagementTable({
     <div className="management-table-container">
       <header>
         <h2>{title}</h2>
-        <button>+ Criar novo</button>
+        <MyModal title={"Criar usuário"} />
       </header>
       <div
         className={
