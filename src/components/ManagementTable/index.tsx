@@ -8,8 +8,9 @@ interface ManagementTableProps {
   title: string;
   entityType: "user" | "real state";
   users?: User[];
-  setUserFactory: Dispatch<SetStateAction<Data>>;
+  setUserFactory: Dispatch<SetStateAction<UserFactory>>;
   realStates?: RealState[];
+  setRealStateFactory: Dispatch<SetStateAction<RealStateFactory>>;
 }
 
 type User = {
@@ -27,9 +28,14 @@ type RealState = {
   value: number;
 };
 
-export type Data = {
+export type UserFactory = {
   users: User[] | undefined;
 }
+
+export type RealStateFactory = {
+  realStates: RealState[] | undefined;
+}
+
 
 export function ManagementTable({
   title,
@@ -37,16 +43,27 @@ export function ManagementTable({
   users,
   setUserFactory,
   realStates,
+  setRealStateFactory
 }: ManagementTableProps) {
 
 
-  function handleDelete(e: any, user_id: number) {
-    let usersWithoutDeleteElement: User[] | undefined = [];
-    usersWithoutDeleteElement = users?.filter((e: User) => {
-      return e.id !== user_id
-    })
+  function handleDelete(e: any, entity_id: number, entityType: String) {
 
-    setUserFactory({ users: usersWithoutDeleteElement });
+    if (entityType === 'user') {
+      let usersWithoutDeleteElement: User[] | undefined = [];
+      usersWithoutDeleteElement = users?.filter((e: User) => {
+        return e.id !== entity_id
+      })
+
+      setUserFactory({ users: usersWithoutDeleteElement });
+    } else {
+      let realStatesWithoutDeleteElement: RealState[] | undefined = [];
+      realStatesWithoutDeleteElement = realStates?.filter((e: RealState) => {
+        return e.id !== entity_id
+      })
+
+      setRealStateFactory({ realStates: realStatesWithoutDeleteElement });
+    }
   }
   return (
     <div className="management-table-container">
@@ -91,7 +108,7 @@ export function ManagementTable({
                     </span>
                   </td>
                   <td className="delete">
-                    <BiTrash onClick={(e) => handleDelete(e, user.id,)} className="trash-icon" />
+                    <BiTrash onClick={(e) => handleDelete(e, user.id, 'user')} className="trash-icon" />
                   </td>
                 </>
               </tr>
@@ -131,7 +148,7 @@ export function ManagementTable({
                     </button>
                   </td>
                   <td className="delete">
-                    <BiTrash className="trash-icon" />
+                    <BiTrash className="trash-icon" onClick={(e) => handleDelete(e, realState.id, "real-state")} />
                   </td>
                 </>
               </tr>

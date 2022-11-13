@@ -11,7 +11,7 @@ import { useEffect, useState } from "react";
 const MyRoutes = () => {
   const [userFactory, setUserFactory] = useState();
   const [realStateFactory, setRealStateFactory] = useState();
-  console.log(userFactory)
+  console.log(realStateFactory)
 
   useEffect(() => {
     fetch("http://localhost:5173/api/users")
@@ -67,6 +67,7 @@ const MyRoutes = () => {
                   title="Imóveis"
                   entityType="real state"
                   realStates={realStateFactory?.realStates}
+                  setRealStateFactory={setRealStateFactory}
                 />
               </div>
             </>
