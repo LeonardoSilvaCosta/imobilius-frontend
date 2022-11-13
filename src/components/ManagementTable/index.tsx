@@ -7,7 +7,7 @@ import "./styles.css";
 
 interface ManagementTableProps {
   title: string;
-  entityType: "user" | "real state";
+  entityType: string;
   users?: User[];
   setUserFactory: Dispatch<SetStateAction<UserFactory>>;
   realStates?: RealState[];
@@ -37,7 +37,6 @@ export type RealStateFactory = {
   realStates: RealState[] | undefined;
 }
 
-
 export function ManagementTable({
   title,
   entityType,
@@ -47,12 +46,7 @@ export function ManagementTable({
   setRealStateFactory
 }: ManagementTableProps) {
 
-  function handleUpdate(e: any, entity_id: number, entityType: String) {
-
-  }
-
-
-  function handleDelete(e: any, entity_id: number, entityType: String) {
+  async function handleDelete(e: any, entity_id: number, entityType: String) {
 
     if (entityType === 'user') {
       let usersWithoutDeleteElement: User[] | undefined = [];
@@ -60,21 +54,29 @@ export function ManagementTable({
         return e.id !== entity_id
       })
 
-      setUserFactory({ users: usersWithoutDeleteElement });
+      const deleteRequest = await fetch(`http://localhost:5173/api/users/${entity_id}`, { method: "DELETE" });
+
+      if (deleteRequest.status === 204) {
+        setUserFactory({ users: usersWithoutDeleteElement });
+      }
     } else {
       let realStatesWithoutDeleteElement: RealState[] | undefined = [];
       realStatesWithoutDeleteElement = realStates?.filter((e: RealState) => {
         return e.id !== entity_id
       })
 
-      setRealStateFactory({ realStates: realStatesWithoutDeleteElement });
+      const deleteRequest = await fetch(`http://localhost:5173/api/real-states/${entity_id}`, { method: "DELETE" });
+
+      if (deleteRequest.status === 204) {
+        setRealStateFactory({ realStates: realStatesWithoutDeleteElement });
+      }
     }
   }
   return (
     <div className="management-table-container">
       <header>
         <h2>{title}</h2>
-        <MyModal title={"Criar usuário"} />
+        <MyModal title={"Criar usuário"} users={users} setUserFactory={setUserFactory} />
       </header>
       <div
         className={

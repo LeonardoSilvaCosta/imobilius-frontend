@@ -77,7 +77,18 @@ export function makeServer() {
       });
 
       this.get('/users');
+      this.delete('/users/:id', (schema, request) => {
+        let id = request.params.id
+
+        return schema.users.find(id).destroy();
+      });
+
       this.get('/real-states');
+      this.delete('/real-states/:id', (schema, request) => {
+        let id = request.params.id
+
+        return schema.realStates.find(id).destroy();
+      });
 
       this.get('/cities', (schema, request) => {
         return citiesDataTest;

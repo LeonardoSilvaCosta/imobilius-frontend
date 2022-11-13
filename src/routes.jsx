@@ -11,7 +11,6 @@ import { useEffect, useState } from "react";
 const MyRoutes = () => {
   const [userFactory, setUserFactory] = useState();
   const [realStateFactory, setRealStateFactory] = useState();
-  console.log(realStateFactory)
 
   useEffect(() => {
     fetch("http://localhost:5173/api/users")
@@ -22,7 +21,6 @@ const MyRoutes = () => {
     .then(response => response.json())
     .then(data => setRealStateFactory(data)); 
   }, [])
-  console.log("realState", realStateFactory)
   return (
     <BrowserRouter>
       <Routes>
